@@ -26,7 +26,12 @@ qrConn.on("connected", () => console.log(`✅ QR DB connected`));
 stockConn.on("connected", () => console.log(`✅ Stock DB connected`));
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://paddy-purchase.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
