@@ -28,7 +28,7 @@ stockConn.on("connected", () => console.log(`✅ Stock DB connected`));
 const app = express();
 app.use(
   cors({
-    origin: "https://paddy-purchase.vercel.app",
+     origin: ["https://paddy-purchase.vercel.app", "http://localhost:5174"],
     credentials: true,
   })
 );
